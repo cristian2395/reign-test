@@ -47,7 +47,7 @@ class HitsAdapter(private var localData: ArrayList<Hit>): RecyclerView.Adapter<H
                 Snackbar.make(viewHolder.itemView, "No existe el sitio", Snackbar.LENGTH_LONG).show();
             }
         }
-
+        Log.e("iddddddd", localData[position].objectID.toString())
     }
 
     fun difDate(index: Int): String = localData[index].createdAt?.let {

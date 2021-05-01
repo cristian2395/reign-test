@@ -15,4 +15,7 @@ interface HitDAO {
 
     @Delete
     suspend fun delete(hit: Hit)
+
+    @Query("DELETE FROM " + Hit.TABLE_NAME)
+    suspend fun deleteData()
 }

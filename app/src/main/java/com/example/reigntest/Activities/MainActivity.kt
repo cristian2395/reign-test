@@ -1,7 +1,6 @@
 package com.example.reigntest.Activities
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,8 +23,6 @@ class MainActivity() : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var dbHelper: DatabaseHelperImpl
     lateinit var recyclerViewAdapter: HitsAdapter
-    var hitTrash: ArrayList<DeletHit> = ArrayList<DeletHit>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
@@ -41,15 +38,12 @@ class MainActivity() : AppCompatActivity() {
         val swipeHandler = object : SwipeToDeleteCallback(this) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = binding.recyclerHit.adapter as HitsAdapter
-                adapter.getArrayList()[viewHolder.adapterPosition].objectID?.let {
-                    deletHitBD(it)
-                }
+                adapter.getArrayList()[viewHolder.adapterPosition].objectID?.let { deletHitBD(it) }
                 adapter.removeAt(viewHolder.adapterPosition)
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
         itemTouchHelper.attachToRecyclerView(binding.recyclerHit)
-
 
         getHitBD()
     }
@@ -57,12 +51,12 @@ class MainActivity() : AppCompatActivity() {
     fun peticion() = CoroutineScope(Dispatchers.IO).launch {
         binding.swipeRefreshLayout.isRefreshing = true
         withContext(Dispatchers.Main) {
-            getHitDeletBD()
             val result: ResponseRequest<Item?> = api.GET("search_by_date?query=mobile")
             if (result.status) {
                 val data = filterData(ArrayList<Hit>(result.data?.hits!!), getHitDeletBD())
                 recyclerViewAdapter = HitsAdapter(data)
                 binding.recyclerHit.adapter = recyclerViewAdapter
+                dbHelper.deleteDataH()
                 dbHelper.insertAll(result.data.hits)
             } else {
                 Snackbar.make(binding.root, result.message, Snackbar.LENGTH_LONG).show();
@@ -74,11 +68,7 @@ class MainActivity() : AppCompatActivity() {
     fun filterData(item: ArrayList<Hit>, delete: ArrayList<DeletHit>): ArrayList<Hit> {
         return if (delete.size > 0) {
             ArrayList<Hit>(item.filter { api ->
-                delete.find{ api.objectID == it.objectID }?.let {
-                    false
-                } ?:run {
-                    true
-                }
+                delete.find{ api.objectID == it.objectID }?.let { false } ?:run { true }
             })
         } else {
             item
@@ -92,8 +82,8 @@ class MainActivity() : AppCompatActivity() {
     fun getHitBD() = CoroutineScope(Dispatchers.IO).launch {
         withContext(Dispatchers.Main) {
             val data = filterData(ArrayList<Hit>(dbHelper.getHits()), getHitDeletBD())
-            val adapterBD = HitsAdapter(data)
-            binding.recyclerHit.adapter = adapterBD
+            recyclerViewAdapter = HitsAdapter(data)
+            binding.recyclerHit.adapter = recyclerViewAdapter
             peticion()
         }
     }
