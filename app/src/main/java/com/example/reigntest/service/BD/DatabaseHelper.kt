@@ -1,6 +1,6 @@
-package com.example.reigntest.Data.BD
+package com.example.reigntest.service.BD
 
-import com.example.reigntest.Data.BD.Entity.*
+import com.example.reigntest.service.BD.Entity.*
 
 interface DatabaseHelper {
     suspend fun getHits(): List<Hit>

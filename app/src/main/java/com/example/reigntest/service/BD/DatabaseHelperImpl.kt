@@ -1,7 +1,7 @@
-package com.example.reigntest.Data.BD
+package com.example.reigntest.service.BD
 
-import com.example.reigntest.Data.BD.Entity.DeletHit
-import com.example.reigntest.Data.BD.Entity.Hit
+import com.example.reigntest.service.BD.Entity.DeletHit
+import com.example.reigntest.service.BD.Entity.Hit
 
 class DatabaseHelperImpl(private val appDatabase: AppDatabase) : DatabaseHelper {
 

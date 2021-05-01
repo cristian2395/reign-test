@@ -1,9 +1,8 @@
-package com.example.reigntest.Data.BD.Entity
+package com.example.reigntest.service.BD.Entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "Hit")

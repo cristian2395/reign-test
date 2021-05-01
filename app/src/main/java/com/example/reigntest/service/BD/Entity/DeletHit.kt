@@ -1,4 +1,4 @@
-package com.example.reigntest.Data.BD.Entity
+package com.example.reigntest.service.BD.Entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

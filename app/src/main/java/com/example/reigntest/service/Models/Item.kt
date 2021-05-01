@@ -1,6 +1,6 @@
-package com.example.reigntest.Data.Models
+package com.example.reigntest.service.Models
 
-import com.example.reigntest.Data.BD.Entity.Hit
+import com.example.reigntest.service.BD.Entity.Hit
 import com.google.gson.annotations.SerializedName
 
 data class Item(

@@ -1,15 +1,15 @@
-package com.example.reigntest.Activities
+package com.example.reigntest.view.adapter
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reigntest.Data.BD.Entity.Hit
+import com.example.reigntest.service.BD.Entity.Hit
 import com.example.reigntest.R
+import com.example.reigntest.view.ui.WebViewActivity
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
@@ -47,7 +47,6 @@ class HitsAdapter(private var localData: ArrayList<Hit>): RecyclerView.Adapter<H
                 Snackbar.make(viewHolder.itemView, "No existe el sitio", Snackbar.LENGTH_LONG).show();
             }
         }
-        Log.e("iddddddd", localData[position].objectID.toString())
     }
 
     fun difDate(index: Int): String = localData[index].createdAt?.let {

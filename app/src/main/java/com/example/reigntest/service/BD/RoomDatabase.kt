@@ -1,11 +1,11 @@
-package com.example.reigntest.Data.BD
+package com.example.reigntest.service.BD
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.reigntest.Data.BD.DAO.*
-import com.example.reigntest.Data.BD.Entity.*
+import com.example.reigntest.service.BD.DAO.*
+import com.example.reigntest.service.BD.Entity.*
 
 @Database(entities = [Hit::class, DeletHit::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

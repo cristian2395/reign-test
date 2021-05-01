@@ -15,10 +15,10 @@
         android:theme="@style/Theme.ReignTest"
         tools:targetApi="m">
         <activity
-            android:name=".Activities.WebViewActivity"
+            android:name=".view.ui.WebViewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".view.ui.MainActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,10 +1,10 @@
-package com.example.reigntest.Data.BD.DAO
+package com.example.reigntest.service.BD.DAO
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.reigntest.Data.BD.Entity.DeletHit
+import com.example.reigntest.service.BD.Entity.DeletHit
 
 @Dao
 interface DeletHitDAO {

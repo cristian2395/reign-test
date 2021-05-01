@@ -1,4 +1,4 @@
-package com.example.reigntest.Activities
+package com.example.reigntest.view.callback
 
 import android.content.Context
 import android.graphics.*

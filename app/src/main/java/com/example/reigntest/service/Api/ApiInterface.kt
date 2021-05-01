@@ -1,4 +1,4 @@
-package com.example.reigntest.Data.Api
+package com.example.reigntest.service.Api
 
 import retrofit2.Response
 import retrofit2.http.GET

@@ -1,8 +1,7 @@
-package com.example.reigntest.Data.BD.DAO
+package com.example.reigntest.service.BD.DAO
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.reigntest.Data.BD.Entity.Hit
+import com.example.reigntest.service.BD.Entity.Hit
 
 @Dao
 interface HitDAO {

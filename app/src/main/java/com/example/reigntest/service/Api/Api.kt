@@ -1,7 +1,7 @@
-package com.example.reigntest.Data.Api
+package com.example.reigntest.service.Api
 
 import android.util.Log
-import com.example.reigntest.Data.Models.ResponseRequest
+import com.example.reigntest.service.Models.ResponseRequest
 import com.google.gson.Gson
 import kotlinx.coroutines.*
 import okhttp3.OkHttpClient

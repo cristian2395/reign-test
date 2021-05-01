@@ -1,4 +1,4 @@
-package com.example.reigntest.Activities
+package com.example.reigntest.view.ui
 
 import android.os.Bundle
 import android.view.View
