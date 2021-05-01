@@ -21,6 +21,12 @@ The android app lets you:
 - Delete post
 - Cache posts
 
+## Instructions
+Clone the repository and open the project in Android Studio
+```
+$ git clone https://github.com/cristian2395/reign-test.git
+```
+
 ## Screenshots
 
 [<img src="/readme/scren1.jpeg" align="left"

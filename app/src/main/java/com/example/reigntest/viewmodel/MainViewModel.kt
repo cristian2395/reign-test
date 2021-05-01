@@ -3,7 +3,6 @@ package com.example.reigntest.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.reigntest.service.Api.Api
 import com.example.reigntest.service.BD.DatabaseBuilder
 import com.example.reigntest.service.BD.DatabaseHelperImpl
